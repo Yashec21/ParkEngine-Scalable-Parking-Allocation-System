@@ -1,6 +1,6 @@
 # ParkEngine – Scalable Parking Allocation System
 
-**Java | Object-Oriented Programming | Low-Level Design | Design Patterns**
+**Java | Object-Oriented Programming | System Design | Low-Level Design (LLD) | Design Patterns**
 
 ## Overview
 
