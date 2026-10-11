@@ -1,82 +1,87 @@
 # ParkEngine – Scalable Parking Allocation System
 
-ParkEngine is a Java-based parking management application that simulates vehicle parking across multiple floors. It manages parking spot allocation, ticket generation, vehicle lookup, parking fee calculation, and exit processing.
+**Java | Object-Oriented Programming | Low-Level Design | Design Patterns**
 
-The project demonstrates object-oriented programming, low-level design, and commonly used design patterns through a modular parking system.
+## Overview
+
+ParkEngine is a Java-based parking management application that simulates a multi-floor parking facility. It manages vehicle parking, compatible parking-spot allocation, ticket generation, vehicle lookup, parking fee calculation, and vehicle exit operations.
+
+The project demonstrates how object-oriented programming and design patterns can be used to organize a real-world problem into separate classes with clear responsibilities.
 
 ## Features
 
-- **Multi-Floor Parking:** Manage parking floors with dedicated spots for bikes, cars, and trucks.
-- **Automated Spot Allocation:** Allocate the first available compatible parking spot.
-- **Ticket Management:** Generate parking tickets and track active parking sessions.
-- **Vehicle Search:** Find an active parking ticket using the vehicle number.
-- **Parking Fee Calculation:** Calculate charges based on vehicle type and parking duration.
-- **Flexible Pricing:** Support normal and weekend pricing strategies.
+- **Multi-Floor Parking:** Manage parking floors and their parking spots.
+- **Multiple Vehicle Types:** Support bikes, cars, and trucks.
+- **Parking Spot Allocation:** Select an available spot compatible with the vehicle.
+- **Ticket Management:** Generate and track active parking tickets.
+- **Vehicle Search:** Find active parking records using a vehicle registration number.
+- **Parking Fee Calculation:** Calculate parking charges based on parking duration and the configured pricing strategy.
+- **Flexible Pricing:** Demonstrate normal and weekend pricing strategies.
 - **Payment Simulation:** Demonstrate Cash, UPI, and Card payment options.
-- **Availability Updates:** Refresh parking display boards when spot availability changes.
-- **Duplicate Entry Prevention:** Prevent the same vehicle from being parked more than once during an active session.
+- **Availability Updates:** Notify parking display boards when spot availability changes.
+- **Duplicate Entry Prevention:** Prevent duplicate active parking for the same vehicle number.
 
-## Tech Stack
+## Technology Stack
 
 - **Language:** Java
-- **Core Concepts:** OOP, Collections Framework, Exception Handling, Java Date and Time API
-- **Data Structures:** ArrayList, HashMap, List, Map
-- **Design Patterns:** Singleton, Factory, Strategy, Observer
+- **Programming Concepts:** OOP, abstraction, inheritance, encapsulation, polymorphism
+- **Collections:** ArrayList, HashMap, List, Map
+- **Date and Time:** Java Date and Time API
 - **Interface:** Console-based menu
+- **Version Control:** Git and GitHub
 
 ## Design Patterns
 
-| Pattern | Implementation | Purpose |
-|---|---|---|
-| Singleton | `ParkingLot` | Provides a shared parking lot instance |
-| Factory | `VehicleFactory` | Centralizes vehicle object creation |
-| Strategy | `ParkingStrategy` | Separates parking spot selection logic |
-| Strategy | `PricingStrategy` | Separates parking fee calculation |
-| Strategy | `PaymentStraregy` | Supports interchangeable payment implementations |
-| Observer | `ParkingObserver` | Updates display boards when parking availability changes |
+| Design Pattern | Purpose |
+|---|---|
+| Singleton | Maintains a centralized parking-lot instance |
+| Factory | Creates vehicle objects based on vehicle type |
+| Strategy | Supports interchangeable parking allocation, pricing, and payment behaviours |
+| Observer | Notifies display boards when parking availability changes |
 
-## How It Works
+These patterns help separate responsibilities and make the application easier to understand and extend.
 
-1. Select the vehicle type and enter its registration number.
-2. The system checks for duplicate active parking.
-3. An available compatible parking spot is selected.
-4. The entry gate generates a parking ticket.
-5. At exit, the system calculates parking duration and charges.
-6. A payment method is selected and the parking spot is released.
+## Application Workflow
+
+1. A vehicle arrives at the parking facility.
+2. The system identifies the vehicle type and registration number.
+3. It checks for an existing active parking record.
+4. A compatible available parking spot is selected.
+5. The vehicle is allocated a spot and a parking ticket is generated.
+6. The system tracks the active parking session.
+7. At exit, parking duration and applicable charges are calculated.
+8. A simulated payment method is invoked.
+9. The parking spot is released and availability is updated.
 
 ## Project Structure
 
 ```text
 ParkEngine/
 ├── src/
-│   └── program1017.java
-├── screenshots/
+│   └── ParkEngine.java
 ├── README.md
 ├── .gitignore
 └── LICENSE
 ```
 
-The current implementation keeps the application classes in a single Java source file. The project can be further modularized into separate packages.
-
 ## Prerequisites
 
-- Java Development Kit (JDK) installed
+- Java Development Kit (JDK)
 - A terminal or Java-compatible IDE
-- Git (optional, for cloning and version control)
 
 ## How to Run
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/Yashec21/ParkEngine.git
-cd ParkEngine
+git clone https://github.com/Yashec21/ParkEngine-Scalable-Parking-Allocation-System.git
+cd ParkEngine-Scalable-Parking-Allocation-System
 ```
 
-Compile the application from the repository root:
+Compile the Java source:
 
 ```bash
-javac -d out src/program1017.java
+javac -d out src/ParkEngine.java
 ```
 
 Run the application:
@@ -85,29 +90,26 @@ Run the application:
 java -cp out program1017
 ```
 
-The application presents a console menu for parking vehicles, processing exits, searching vehicles, and displaying parking information.
+**Note:** These commands assume the main class is still named `program1017`, as in the current source. If you rename the main class, update the run command accordingly.
 
-## Learning Outcomes
+## Key Learning Outcomes
 
-- Applying OOP principles to a real-world use case
-- Designing interchangeable algorithms using Strategy Pattern
-- Centralizing object creation with Factory Pattern
-- Implementing event-driven updates with Observer Pattern
-- Managing application state using Java Collections
-- Modeling parking sessions with Java Date and Time API
+- Applying OOP principles to a practical problem.
+- Identifying classes, responsibilities, and relationships.
+- Using interfaces and abstract classes to define behaviour.
+- Applying Singleton, Factory, Strategy, and Observer patterns.
+- Managing active records using Java Collections.
+- Understanding low-level system design and extensibility.
 
-## Future Scope
+## Future Enhancements
 
-- Refactor classes into separate Java packages
-- Add automated unit tests using JUnit
-- Persist parking records using MySQL or PostgreSQL
-- Develop REST APIs using Spring Boot
-- Add concurrency-safe parking allocation
-- Integrate a graphical interface and real payment gateway
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+- Refactor classes into separate packages.
+- Add automated unit tests using JUnit.
+- Integrate a relational database for persistent storage.
+- Develop REST APIs using Spring Boot.
+- Improve validation and exception handling.
+- Add concurrency-safe parking allocation.
+- Develop a graphical or web interface.
 
 ## Author
 
@@ -115,3 +117,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 - GitHub: [Yashec21](https://github.com/Yashec21)
 - LinkedIn: [yashpatilec](https://www.linkedin.com/in/yashpatilec/)
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
